@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Movies</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+	<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+
+	<!-- Demo styles -->
+	<style>
+
+
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+
+		{% include 'header.html' %}
+
+		
+		{% block content %}
+			
+		{% endblock content %}
+			
+
+		{% include 'footer.html' %}
+
+	</div>
+</body>
+</html>
