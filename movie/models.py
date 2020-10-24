@@ -3,10 +3,10 @@ from django.urls import reverse
 
 
 CATEGORY_CHOICES = (
-    ('A','Action'),
-    ('C','Comedy'),
-    ('D','Drama'),
-    ('R','Romance'),
+    ('action','Action'),
+    ('comedy','Comedy'),
+    ('drama','Drama'),
+    ('romance','Romance'),
 )
 
 LANGUAGE_CHOICES = (
@@ -26,7 +26,7 @@ class Movie(models.Model):
     image = models.ImageField(upload_to = "movie")
     views = models.IntegerField(default=0)
     cast = models.CharField(max_length=50) # cast is the group of actor who make up a film or stagee play
-    category = models.CharField(choices = CATEGORY_CHOICES, max_length=1)
+    category = models.CharField(choices = CATEGORY_CHOICES, max_length=10)
     language = models.CharField(choices = LANGUAGE_CHOICES, max_length=2)
     status = models.CharField(choices = STATUS_CHOICES, max_length=2)
     year_of_production = models.DateField()

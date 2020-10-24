@@ -6,10 +6,10 @@
             <li><a href="index.html">Home</a></li>
             <li><a>Genres</a>
                 <ul>
-                    <li><a href="genre.html">Action</a></li>
-                    <li><a href="genre.html">Comedy</a></li>
-                    <li><a href="genre.html">Drama</a></li>
-                    <li><a href="genre.html">Romance</a></li>
+                    <li><a href="{% url 'movie:movie_category' 'action' %}">Action</a></li>
+                    <li><a href="{% url 'movie:movie_category' 'comedy' %}">Comedy</a></li>
+                    <li><a href="{% url 'movie:movie_category' 'drama' %}">Drama</a></li>
+                    <li><a href="{% url 'movie:movie_category' 'romance' %}">Romance</a></li>
                 </ul>
             </li>
             <li><a>Year</a>
@@ -22,8 +22,8 @@
             </li>
             <li><a>Language</a>
                 <ul>
-                    <li><a href="language.html">English</a></li>
-                    <li><a href="language.html">German</a></li>
+                    <li><a href="{% url 'movie:movie_language' 'EN' %}">English</a></li>
+                    <li><a href="{% url 'movie:movie_language' 'DR' %}">Dari</a></li>
                 </ul>
             </li>
             <li><a href="mostwatched.html">Most Watched</a></li>
