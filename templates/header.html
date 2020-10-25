@@ -26,7 +26,6 @@
                     <li><a href="{% url 'movie:movie_language' 'DR' %}">Dari</a></li>
                 </ul>
             </li>
-            <li><a href="mostwatched.html">Most Watched</a></li>
             <li class="mobsearch">
                 <form class="mobform">
                     <input type="text" name="s" class="mobsearchfield" placeholder="Search...">
@@ -35,8 +34,8 @@
             </li>
         </ul>
     </nav>
-    <form class="search">
-        <input type="text" name="s" class="searchfield" placeholder="Search...">
+    <form class="search" method="GET" action="{% url 'movie:movie_search' %}">
+        <input type="text" name="q" value="{{request.GET.q}}" class="searchfield" placeholder="Search...">
         <input type="submit" value="" class="searchsubmit">
     </form>
 
