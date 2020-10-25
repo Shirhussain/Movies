@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView
+from django.views.generic.dates import YearArchiveView
+
 from . models import Movie, MovieLink
 class MovieListView(ListView):
     model = Movie
@@ -65,3 +67,12 @@ class MovieSearch(ListView):
             object_list = self.model.objects.none()
         return object_list
     
+
+
+class MovieYearArchiveView(YearArchiveView):
+    queryset = Movie.objects.all()
+    date_field = "year_of_production"
+    make_object_list = True
+    allow_future = True
+    template_name = "movie/movie_list.html"
+

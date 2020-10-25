@@ -17,8 +17,16 @@
 			{% if movie_language %}
 				<h3>{{movie_language|title}} Movies</h3> 
 			{% endif %}
-			
 
+<!-- 			
+			{% if date_list %}
+			
+				{% for date in date_list %}
+					<h3>{{date|date:"Y"}} Movies</h3>
+				{% endfor %}
+			{% endif %} -->
+				
+			
 			<div class="movies">
 				
 				{% for movie in object_list %}					
