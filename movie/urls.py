@@ -5,7 +5,7 @@ from . views import (
     MovieCategory, 
     MovieLanguage, 
     MovieSearch, 
-    MovieYearArchiveView
+    MovieYearArchiveView,
 )
 
 

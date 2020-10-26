@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.text import  slugify
+from django.utils import timezone
+
 
 CATEGORY_CHOICES = (
     ('action','Action'),
@@ -32,6 +34,8 @@ class Movie(models.Model):
     status = models.CharField(choices = STATUS_CHOICES, max_length=2)
     year_of_production = models.DateField()
     trailer = models.URLField()
+    created = models.DateTimeField(default = timezone.now)
+    
     
 
     def save(self, *args, **kwargs):
@@ -62,6 +66,10 @@ class MovieLink(models.Model):
         return str(self.movie)
 
 
+class HomeMovieSlider(models.Model):
+    movie = models.OneToOneField(Movie, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to = "HomeMovieSlider")
 
-    # - tags
-    # - related movies 
+
+    def __str__(self):
+        return self.movie.title

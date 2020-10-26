@@ -1,9 +1,9 @@
 {% load static %}
 <header class="header">
-    <figure class="logo"><a href="index.html"><img src="{% static 'img/logo.png' %}" alt="Logo"></figure></a>
+    <figure class="logo"><a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Logo"></figure></a>
     <nav class="menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
             <li><a>Genres</a>
                 <ul>
                     <li><a href="{% url 'movie:movie_category' 'action' %}">Action</a></li>
@@ -27,8 +27,8 @@
                 </ul>
             </li>
             <li class="mobsearch">
-                <form class="mobform">
-                    <input type="text" name="s" class="mobsearchfield" placeholder="Search...">
+                <form class="mobform" method="GET" action="{% url 'movie:movie_search' %}">
+                    <input type="text" name="q" value="{{request.GET.get}}" class="mobsearchfield" placeholder="Search...">
                     <input type="submit" value="" class="mobsearchsubmit">
                 </form>
             </li>
