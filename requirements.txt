@@ -1,0 +1,14 @@
+asgiref==3.2.10
+autopep8==1.5.4
+Django==3.1
+django-phonenumber-field==5.0.0
+django-summernote==0.8.11.6
+django-taggit==1.3.0
+django-widget-tweaks==1.4.8
+phonenumbers==8.12.8
+Pillow==7.2.0
+pycodestyle==2.6.0
+python-decouple==3.3
+pytz==2020.1
+sqlparse==0.3.1
+toml==0.10.1
